@@ -1,0 +1,1 @@
+@"C:\Users\Xervanik\PycharmProjects\cubewars\testone\Scripts\python.exe" "C:\Users\Xervanik\PycharmProjects\cubewars\testone\Scripts\markdown_py" %*
