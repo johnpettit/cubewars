@@ -10,11 +10,21 @@ class Account(models.Model):
     def __str__(self):
         return self.username
 
-class Character(models.Model):
-    name = models.CharField(max_length=40)
+class Profession(models.Model):
+    name = models.CharField(max_length=60)
     create_date = models.DateTimeField()
-    artist = models.ForeignKey(Account)
-    level = models.IntegerField()
 
     def __str__(self):
         return self.name
+
+class Character(models.Model):
+    name = models.CharField(max_length=40)
+    create_date = models.DateTimeField()
+    account = models.ForeignKey(Account)
+    profession = models.ForeignKey(Profession)
+    level = models.IntegerField(default=1)
+
+    def __str__(self):
+        return self.name
+
+
