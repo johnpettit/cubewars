@@ -9,3 +9,12 @@ class Account(models.Model):
 
     def __str__(self):
         return self.username
+
+class Character(models.Model):
+    name = models.CharField(max_length=40)
+    create_date = models.DateTimeField()
+    artist = models.ForeignKey(Account)
+    level = models.IntegerField()
+
+    def __str__(self):
+        return self.name
