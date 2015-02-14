@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Account(models.Model):
     username = models.CharField(max_length=40)
     password = models.CharField(max_length=100)
@@ -26,5 +25,15 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
+
+class Game(models.Model):
+    name = models.CharField(max_length=40)
+    create_date = models.DateTimeField()
+    accountID = models.ForeignKey(Account)
+    characterID = models.ForeignKey(Character)
+
+    def __str__(self):
+        return self.name
+
 
 
